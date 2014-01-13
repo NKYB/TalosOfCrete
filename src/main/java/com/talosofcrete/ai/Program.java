@@ -16,39 +16,50 @@ public class Program {
         if (words.length() > 0){
             int action_index = (int)(java.lang.Math.random() * (config.program_action_cross_end+1));
             if (action_index >= config.program_action_add_start && action_index <= config.program_action_add_end){
+                
+                // Modify by Adding
                 modifyByAdding();
+                
             } else if (action_index >= config.program_action_delete_start && action_index <= config.program_action_delete_end){
-                modifyByChanging();    
+                
+                // Modify By Changing
+                String[] wordList = createWordListFromWords(words);
+                int modifyIndex = (int)(java.lang.Math.random() * (wordList.length));
+                modifyByChanging(modifyIndex, wordList); 
+                
             } else if (action_index >= config.program_action_modify_start && action_index <= config.program_action_modify_end){
-                modifyByDeleting();
+                
+                // Modify By Deleting
+                String[] wordList = createWordListFromWords(words);
+                int deleteIndex = (int)(java.lang.Math.random() * (wordList.length));
+                modifyByDeleting(deleteIndex, wordList);
+                
             } else if (action_index >= config.program_action_cross_start && action_index <= config.program_action_cross_end){
+                
+                // Modify By Crossing
                 modifyByCrossing(programs[0]);
             }
         } else {
-            words = Word.createRandom(this, data.inputData[0].length); 
+            words = Word.createRandom(data.inputData[0].length, config); 
         }
     }
     
-    private void modifyByAdding(){
+    public void modifyByAdding(){
         String[] wordList = createWordListFromWords(words);
         if (wordList.length < config.program_max_words_length){
-            words += Word.createRandom(this, data.inputData[0].length);
+            words += Word.createRandom(data.inputData[0].length, config); 
         }
     }
     
-    private void modifyByChanging(){
-        String[] wordList = createWordListFromWords(words);
-        int modifyIndex = (int)(java.lang.Math.random() * (wordList.length));
-        wordList[modifyIndex] = Word.createRandom(this, data.inputData[0].length).replace(";","");
+    public void modifyByChanging(int modifyIndex, String[] wordList){
+        wordList[modifyIndex] = Word.createRandom(data.inputData[0].length, config).replace(";","");
         words = "";
         for (int i = 0; i < wordList.length; i++) {
             words += wordList[i] + ";";
         }
     }
     
-    private void modifyByDeleting(){
-        String[] wordList = createWordListFromWords(words);
-        int deleteIndex = (int)(java.lang.Math.random() * (wordList.length));
+    public void modifyByDeleting(int deleteIndex, String[] wordList){
         wordList[deleteIndex] = "";
         words = "";
         for (int i = 0; i < wordList.length; i++) {
@@ -58,7 +69,7 @@ public class Program {
         }
     }
     
-    private void modifyByCrossing(Program programToCrossFrom){
+    public void modifyByCrossing(Program programToCrossFrom){
         String[] wordList = createWordListFromWords(words);
         String[] crossWordList = createWordListFromWords(programToCrossFrom.words);
         words = "";

@@ -18,12 +18,13 @@ public class Population {
             sort();
             prune();
             debug_loop(i);
-            if (programs[0].score < 1){
+            if (programs[0].score < config.program_success_score){
                 i = config.population_max_generations;
             }
         }
         debug_final_score();
     }
+
     
     private void initPopulation(){
         programs = new Program[config.population_max_size];

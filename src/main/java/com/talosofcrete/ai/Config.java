@@ -3,6 +3,7 @@ package com.talosofcrete.ai;
 public class Config {
     public int population_max_generations = 10000;
     public int program_initial_score = 100000000;
+    public int program_success_score = 1;
     
     public int population_max_size = 10;
     public int program_max_words_length = 30;
@@ -14,4 +15,8 @@ public class Config {
     public int program_action_modify_end = 70;
     public int program_action_cross_start = 71;
     public int program_action_cross_end = 100;
+    
+    public int word_constant_min = 1;
+    public int word_constant_max = 100;
+    
 }

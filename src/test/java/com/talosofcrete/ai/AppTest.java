@@ -28,14 +28,12 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
     public void testApp()
     {
         App app = new App();
         String[] args = null;
         App.main(args);
+        
         
         assertTrue( true );
     }

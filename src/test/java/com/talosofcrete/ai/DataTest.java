@@ -1,14 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.talosofcrete.ai;
 
 import junit.framework.TestCase;
 
 /**
  *
- * @author Administrator
+ * @author nbuwald
  */
 public class DataTest extends TestCase {
     
@@ -16,27 +12,26 @@ public class DataTest extends TestCase {
         super(testName);
     }
 
-    /**
-     * Test of createRandom method, of class Data.
-     */
     public void testCreateRandom() {
         System.out.println("createRandom");
         int numRows = 5;
-        int numCols = 5;
-        Data instance = new Data();
-        instance.createRandom(numRows, numCols);
-        assertTrue( true );
+        int numCols = 6;
+        Data data = new Data();
+        data.createRandom(numRows, numCols);
+        TestCase.assertEquals(data.inputData[0].length, numCols);
+        TestCase.assertEquals(data.inputData.length, numRows);
+        TestCase.assertEquals(data.outputData.length, numRows);
     }
 
-    /**
-     * Test of createSequential method, of class Data.
-     */
     public void testCreateSequential() {
         System.out.println("createSequential");
         int numRows = 5;
-        int numCols = 5;
-        Data instance = new Data();
-        instance.createSequential(numRows, numCols);
-        assertTrue( true );
+        int numCols = 6;
+        Data data = new Data();
+        data.createSequential(numRows, numCols);
+        TestCase.assertEquals(data.inputData[0].length, numCols);
+        TestCase.assertEquals(data.inputData.length, numRows);
+        TestCase.assertEquals(data.outputData.length, numRows);
+        TestCase.assertEquals(data.outputData[0], 2F);
     }
 }

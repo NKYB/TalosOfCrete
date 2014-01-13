@@ -1,9 +1,13 @@
 package com.talosofcrete.ai;
 
 public class Word {
-    public static String createRandom(Program program, int numOfVars){
+    public static String createRandom(int numOfVars, Config config){
+        int actionIndex = GetRndInt(0,7);
+        return create(actionIndex,numOfVars,config);
+    }
+    
+    public static String create(int actionIndex, int numOfVars, Config config){
         String word = "";
-        int actionIndex = (int)(java.lang.Math.random()*8);
         switch(actionIndex){
             case 0:
                 word = getMathWord("ADD",numOfVars);
@@ -18,45 +22,33 @@ public class Word {
                 word = getMathWord("DIVIDE",numOfVars);
                 break;
             case 4:
-                word = getMathWordConstant("ADD_CONSTANT",1,100);
+                word = getMathWordConstant("ADD_CONSTANT", config.word_constant_min, config.word_constant_max);
                 break;
             case 5:
-                word = getMathWordConstant("SUBTRACT_CONSTANT",1,100);
+                word = getMathWordConstant("SUBTRACT_CONSTANT", config.word_constant_min, config.word_constant_max);
                 break;
             case 6:
-                word = getMathWordConstant("MULTIPLY_CONSTANT",1,100);
+                word = getMathWordConstant("MULTIPLY_CONSTANT", config.word_constant_min, config.word_constant_max);
                 break;
             case 7:
-                word = getMathWordConstant("DIVIDE_CONSTANT",1,100);
+                word = getMathWordConstant("DIVIDE_CONSTANT", config.word_constant_min, config.word_constant_max);
                 break;
-//            case 8:
-//                word = getMathWord2Vars("IF_GREATER",numOfVars);
-//                break;
-//            case 9:
-//                word = getMathWord2Vars("IF_LESS_THAN",numOfVars);
-//                break;
-//             case 10:
-//                word = "CONSTANT:" + (int)(java.lang.Math.random()*100) + ";";
-////                program.data.addConstant((int)(java.lang.Math.random()*100));
-//                break;
         }
         return word;
     }
     
-    private static String getMathWord2Vars(String action, int numOfVars){
-        int var1Index = (int)(java.lang.Math.random()*numOfVars);
-        int var2Index = (int)(java.lang.Math.random()*numOfVars);
-        return action + ":VAR_" + var1Index + ":VAR_" + var2Index + ";";
-    }
-    
     private static String getMathWord(String action, int numOfVars){
-        int varIndex = (int)(java.lang.Math.random()*numOfVars);
+        int varIndex = GetRndInt(0, numOfVars-1);
         return action + ":VAR_" + varIndex + ";";
     }
     
     private static String getMathWordConstant(String action, int minValue, int maxValue){
-        int constantValue = ((int)(java.lang.Math.random()*(maxValue - minValue)) + minValue);
+        int constantValue = GetRndInt(minValue, maxValue);
         return action + ":" + constantValue + ";";
+    }
+    
+    public static int GetRndInt(int min, int max){
+        return ((int)(java.lang.Math.random()*(max+1))) + min;
     }
     
     public static float eval(String word, float[] vars, float currentScore){
@@ -69,39 +61,29 @@ public class Word {
             parts[i] = Integer.parseInt(partsTemp[i]);
         }
         String action = partsTemp[0];
-        switch(action){
-            case "ADD":
-                return currentScore + vars[parts[1]];
-            case "SUBTRACT":
-                return currentScore - vars[parts[1]];
-            case "MULTIPLY":
-                return currentScore * vars[parts[1]];
-            case "DIVIDE":
-                float varToDivideBy = vars[parts[1]];
-                if (varToDivideBy != 0 && currentScore != 0){
-                    return currentScore / varToDivideBy;
-                } else {
-                    break;
-                }
-            case "ADD_CONSTANT":
-                return currentScore + parts[1];
-            case "SUBTRACT_CONSTANT":
-                return currentScore - parts[1];
-            case "MULTIPLY_CONSTANT":
-                return currentScore * parts[1];
-            case "DIVIDE_CONSTANT":
-                float conToDivideBy = parts[1];
-                if (conToDivideBy != 0 && currentScore != 0){
-                    return currentScore / conToDivideBy;
-                } else {
-                    break;
-                }
-//            case "IF_GREATER":
-//                return (vars[parts[1]] > vars[parts[2]]) ? 1 : 0;
-//            case "IF_LESS_THAN":
-//                return (vars[parts[1]] < vars[parts[2]]) ? 1 : 0;
-//            case "CONSTANT":
-//                return (float) parts[1];
+
+        if (action.equals("ADD")){
+            return currentScore + vars[parts[1]];
+        } else if (action.equals("SUBTRACT")){
+            return currentScore - vars[parts[1]];
+        } else if (action.equals("MULTIPLY")){
+            return currentScore * vars[parts[1]];
+        } else if (action.equals("DIVIDE")){
+            float varToDivideBy = vars[parts[1]];
+            if (varToDivideBy != 0 && currentScore != 0){
+                return currentScore / varToDivideBy;
+            }
+        } else if (action.equals("ADD_CONSTANT")){
+            return currentScore + parts[1];
+        } else if (action.equals("SUBTRACT_CONSTANT")){
+            return currentScore - parts[1];
+        } else if (action.equals("MULTIPLY_CONSTANT")){
+            return currentScore * parts[1];
+        } else if (action.equals("DIVIDE_CONSTANT")){
+            float conToDivideBy = parts[1];
+            if (conToDivideBy != 0 && currentScore != 0){
+                return currentScore / conToDivideBy;
+            }
         }
         return 0;
     }
