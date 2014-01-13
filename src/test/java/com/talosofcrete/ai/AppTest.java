@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package com.talosofcrete.ai;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -33,6 +33,10 @@ public class AppTest
      */
     public void testApp()
     {
+        App app = new App();
+        String[] args = null;
+        App.main(args);
+        
         assertTrue( true );
     }
 }
