@@ -16,6 +16,16 @@ public class ProgramTest extends TestCase {
         super(testName);
     }
 
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
+
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+
     public void testModify() {
 //        System.out.println("modify");
 //        Program[] programs = null;
@@ -49,5 +59,54 @@ public class ProgramTest extends TestCase {
         
         assertEquals(programFrom.words, programTo.words);
         assertEquals(programFrom.score, programTo.score);
+    }
+
+    /**
+     * Test of modifyByAdding method, of class Program.
+     */
+    public void testModifyByAdding() {
+//        System.out.println("modifyByAdding");
+//        Program instance = null;
+//        instance.modifyByAdding();
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of modifyByChanging method, of class Program.
+     */
+    public void testModifyByChanging() {
+//        System.out.println("modifyByChanging");
+//        int modifyIndex = 0;
+//        String[] wordList = null;
+//        Program instance = null;
+//        instance.modifyByChanging(modifyIndex, wordList);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of modifyByDeleting method, of class Program.
+     */
+    public void testModifyByDeleting() {
+//        System.out.println("modifyByDeleting");
+//        int deleteIndex = 0;
+//        String[] wordList = null;
+//        Program instance = null;
+//        instance.modifyByDeleting(deleteIndex, wordList);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of modifyByCrossing method, of class Program.
+     */
+    public void testModifyByCrossing() {
+//        System.out.println("modifyByCrossing");
+//        Program programToCrossFrom = null;
+//        Program instance = null;
+//        instance.modifyByCrossing(programToCrossFrom);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
     }
 }
