@@ -18,14 +18,17 @@ public class Program {
             if (action_index >= config.program_action_add_start && action_index <= config.program_action_add_end){
                 
                 // Modify by Adding
-                modifyByAdding();
+                String[] wordList = createWordListFromWords(words);
+                String newWord = Word.createRandom(words,data.inputData[0].length, config);
+                modifyByAdding(wordList, newWord);
                 
             } else if (action_index >= config.program_action_delete_start && action_index <= config.program_action_delete_end){
                 
                 // Modify By Changing
                 String[] wordList = createWordListFromWords(words);
                 int modifyIndex = (int)(java.lang.Math.random() * (wordList.length));
-                modifyByChanging(modifyIndex, wordList); 
+                String newWord = Word.createRandom(words, data.inputData[0].length, config).replace(";","");
+                modifyByChanging(modifyIndex, wordList, newWord); 
                 
             } else if (action_index >= config.program_action_modify_start && action_index <= config.program_action_modify_end){
                 
@@ -40,31 +43,34 @@ public class Program {
                 modifyByCrossing(programs[0]);
             }
         } else {
-            words = Word.createRandom(data.inputData[0].length, config); 
+            words = Word.createRandom(words, data.inputData[0].length, config); 
         }
     }
     
-    public void modifyByAdding(){
-        String[] wordList = createWordListFromWords(words);
+    public void modifyByAdding(String[] wordList, String newWord){
         if (wordList.length < config.program_max_words_length){
-            words += Word.createRandom(data.inputData[0].length, config); 
+            words += newWord; 
         }
     }
     
-    public void modifyByChanging(int modifyIndex, String[] wordList){
-        wordList[modifyIndex] = Word.createRandom(data.inputData[0].length, config).replace(";","");
-        words = "";
-        for (int i = 0; i < wordList.length; i++) {
-            words += wordList[i] + ";";
+    public void modifyByChanging(int modifyIndex, String[] wordList, String newWord){
+        if (indexExists(wordList, modifyIndex)){
+            wordList[modifyIndex] = newWord;
+            words = "";
+            for (int i = 0; i < wordList.length; i++) {
+                words += wordList[i] + ";";
+            }
         }
     }
     
     public void modifyByDeleting(int deleteIndex, String[] wordList){
-        wordList[deleteIndex] = "";
-        words = "";
-        for (int i = 0; i < wordList.length; i++) {
-            if (!wordList[i].equals("")){ 
-                words += wordList[i] + ";";
+        if (indexExists(wordList, deleteIndex)){
+            wordList[deleteIndex] = "";
+            words = "";
+            for (int i = 0; i < wordList.length; i++) {
+                if (!wordList[i].equals("")){ 
+                    words += wordList[i] + ";";
+                }
             }
         }
     }
@@ -73,7 +79,8 @@ public class Program {
         String[] wordList = createWordListFromWords(words);
         String[] crossWordList = createWordListFromWords(programToCrossFrom.words);
         words = "";
-        for (int i = 0; i < config.program_max_words_length; i++) {
+        int lengthOfCross = (int)(java.lang.Math.random() * config.program_max_words_length);
+        for (int i = 0; i < lengthOfCross; i++) {
             int typeToSelectFrom = (int)(java.lang.Math.random() * 2);
             if (i < wordList.length && typeToSelectFrom == 0){
                 words += wordList[i] + ";";
@@ -83,25 +90,44 @@ public class Program {
         }
     }
     
-    private String[] createWordListFromWords(String words){
+    public String[] createWordListFromWords(String words){
         return words.split(";");
+    }
+    
+    public boolean indexExists(String[] words, final int index) {
+        return index >= 0 && index < words.length;
     }
     
     public void eval(){
         if (words.length() > 0){
-            float evalScore = 0;
             float subScore = 0;
-            String[] word = words.split(";");
+            Word[] wordList = createCleanWordsFromWords(words);
             for (int i = 0; i < data.inputData.length; i++) {
-                evalScore = 0;
-                for (int j = 0; j < word.length; j++) {
-                    float wordScore = Word.eval(word[j], data.inputData[i], evalScore);
-                    evalScore += wordScore;
-                }
-                subScore += Math.abs(data.outputData[i] - evalScore);
+                subScore += Math.abs(data.outputData[i] - scoreWord(wordList, data.inputData[i]));
             }
             this.score = Math.abs(subScore);
         }
+    }
+    
+    public float scoreWord(Word[] wordsList, float[] inputDataRow){
+        float wordScore = 0;
+        for (int j = 0; j < wordsList.length; j++) {
+            wordScore = Word.eval(wordsList[j], inputDataRow, wordScore);
+        }
+        return wordScore;
+    }
+    
+    public static Word[] createCleanWordsFromWords(String wordsAsString){
+        String cleanWords = Utils.replace(wordsAsString,"VAR_","");
+        String[] word = cleanWords.split(";");
+        Word[] wordsList = new Word[word.length];
+        for (int i = 0; i < word.length; i++) {
+            String[] parts = word[i].split(":");
+            wordsList[i] = new Word();
+            wordsList[i].action = parts[0];
+            wordsList[i].param = Integer.parseInt(parts[1]);
+        }
+        return wordsList;
     }
     
     public static Program shallowCopy(Program programFrom, Config config, Data data){

@@ -19,6 +19,7 @@ public class Population {
             prune();
             debug_loop(i);
             if (programs[0].score < config.program_success_score){
+                System.out.println("Found on generation: " + i);
                 i = config.population_max_generations;
             }
         }

@@ -34,7 +34,6 @@ public class AppTest
         String[] args = null;
         App.main(args);
         
-        
         assertTrue( true );
     }
 }
