@@ -14,7 +14,7 @@ public class Data {
                     inputData[i][j] = (int)(java.lang.Math.random()*100);
                 }
             }
-            outputData[i] = inputData[i][2] * inputData[i][1] * inputData[i][3];
+            outputData[i] = inputData[i][2] * inputData[i][1] * 6.76F;
         }
     }
     
