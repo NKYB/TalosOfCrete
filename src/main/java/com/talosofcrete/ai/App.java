@@ -8,6 +8,7 @@ public class App {
         config.population_max_size = 10;
         
         Data data = new Data();
+//        data.importCSVData();
         data.createRandom(10, 5);
         
         Population population = new Population(config, data);
