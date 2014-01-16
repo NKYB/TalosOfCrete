@@ -6,9 +6,11 @@ public class Population {
     
     private Config config;
     private Data data;
+    private float topScore;
     
     public Population(Config config, Data data){
         this.config = config;
+        topScore = config.program_initial_score;
         this.data = data;
         initPopulation();
         for (int i = 0; i < config.population_max_generations; i++) {
@@ -17,6 +19,7 @@ public class Population {
             }
             sort();
             prune();
+            modifyConfig(i);
             debug_loop(i);
             if (programs[0].score < config.program_success_score){
                 System.out.println("Found on generation: " + i);
@@ -28,8 +31,8 @@ public class Population {
 
     
     private void initPopulation(){
-        programs = new Program[config.population_max_size];
-        for (int i = 0; i < config.population_max_size; i++) {
+        programs = new Program[config.population_max_size_limit+1];
+        for (int i = 0; i < config.population_max_size_limit+1; i++) {
             programs[i] = new Program(config, data);
         }
     }
@@ -37,8 +40,8 @@ public class Population {
     private void sort(){
         // bubbleSortPrograms
         Program swapProgram;
-        for (int a = 0; a < programs.length-1; a++) {
-            for (int b = 0; b < programs.length-a-1; b++) {
+        for (int a = 0; a < config.population_max_size - 1; a++) {
+            for (int b = 0; b < config.population_max_size - a - 1; b++) {
                 if (programs[b].score > programs[b+1].score){
                     swapProgram = programs[b];
                     programs[b] = programs[b+1];
@@ -63,6 +66,15 @@ public class Population {
     
     private void prune(){
         programs[config.population_max_size-1].words = "";
+    }
+    
+    private void modifyConfig(int generation){
+        if (generation > 0 && generation % 50000 == 0){
+            if (topScore <= programs[0].score){
+                config.randomize();
+            }
+            topScore = programs[0].score;
+        }
     }
     
     private void debug_loop(int loopIndex){

@@ -5,6 +5,7 @@ public class Config {
     public int program_initial_score = 100000000;
     public int program_success_score = 1;
     
+    public int population_max_size_limit = 100;
     public int population_max_size = 10;
     public int program_max_words_length = 30;
     public int program_action_add_start = 0;
@@ -20,7 +21,7 @@ public class Config {
     public int word_constant_max = 100;
     
     public Config randomize(){
-        population_max_size = Utils.getRndInt(5, 100);
+        population_max_size = Utils.getRndInt(5, population_max_size_limit);
         program_max_words_length = Utils.getRndInt(5, 100);
         program_action_add_start = 0;
         program_action_add_end = Utils.getRndInt(5, 100);
