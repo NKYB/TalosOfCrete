@@ -6,7 +6,7 @@ public class Population {
     
     private Config config;
     private Data data;
-    private float topScore;
+    public float topScore;
     
     public Population(Config config, Data data){
         this.config = config;
@@ -68,7 +68,7 @@ public class Population {
         programs[config.population_max_size-1].words = "";
     }
     
-    private void modifyConfig(int generation){
+    public void modifyConfig(int generation){
         if (generation > 0 && generation % 50000 == 0){
             if (topScore <= programs[0].score){
                 config.randomize();
@@ -90,7 +90,7 @@ public class Population {
         renderAsJS();
     }
     
-    private void renderAsJS(){
+    public void renderAsJS(){
         String inputData = "var inputData = [";
         String outputData = "var outputData = [";
         for (int i = 0; i < data.inputData.length; i++) {
