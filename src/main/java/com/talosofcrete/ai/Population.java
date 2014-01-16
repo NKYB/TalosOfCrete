@@ -31,8 +31,8 @@ public class Population {
 
     
     private void initPopulation(){
-        programs = new Program[config.population_max_size_limit+1];
-        for (int i = 0; i < config.population_max_size_limit+1; i++) {
+        programs = new Program[config.population_max_size_limit+2];
+        for (int i = 0; i < config.population_max_size_limit+2; i++) {
             programs[i] = new Program(config, data);
         }
     }
@@ -87,5 +87,53 @@ public class Population {
         for (int j = 0; j < config.population_max_size; j++) {
             System.out.println(j + " - Word: " + programs[j].words  + " Score: " + programs[j].score);
         }
+        renderAsJS();
+    }
+    
+    private void renderAsJS(){
+        String inputData = "var inputData = [";
+        String outputData = "var outputData = [";
+        for (int i = 0; i < data.inputData.length; i++) {
+            inputData += "[";
+            for (int j = 0; j < data.inputData[i].length; j++) {
+                inputData += data.inputData[i][j] + ",";
+            }
+            inputData += "],";
+            outputData += data.outputData[i] + ",";
+        }
+        inputData += "];";
+        outputData += "];";
+        System.out.println(inputData);
+        System.out.println(outputData);
+        
+        String jsFunction = "function run(inputData, outputData){\n";
+        jsFunction += "     var score = 0;\n";
+        Word[] wordList = Program.createCleanWordsFromWords(programs[0].words);
+        for (int j = 0; j < wordList.length; j++) {
+            if (wordList[j].action.equals("ADD")){
+                jsFunction += "     score += inputData[" + wordList[j].param + "];\n";
+            } else if (wordList[j].action.equals("SUBTRACT")){
+                jsFunction += "     score -= inputData[" + wordList[j].param + "];\n";
+            } else if (wordList[j].action.equals("DIVIDE")){
+                jsFunction += "     score /= inputData[" + wordList[j].param + "];\n";
+            } else if (wordList[j].action.equals("MULTIPLY")){
+                jsFunction += "     score *= inputData[" + wordList[j].param + "];\n";
+            } else if (wordList[j].action.equals("ADD_CONSTANT")){
+                jsFunction += "     score += " + wordList[j].param + ";\n";
+            } else if (wordList[j].action.equals("SUBTRACT_CONSTANT")){
+                jsFunction += "     score -= " + wordList[j].param + ";\n";
+            } else if (wordList[j].action.equals("DIVIDE_CONSTANT")){
+                jsFunction += "     score /= " + wordList[j].param + ";\n";
+            } else if (wordList[j].action.equals("MULTIPLY_CONSTANT")){
+                jsFunction += "     score *= " + wordList[j].param + ";\n";
+            } 
+        }
+        jsFunction += "     console.log('score found:',score);\n";
+        jsFunction += "     console.log('score target:',outputData);\n";
+        jsFunction += "}\n";
+        for (int i = 0; i < data.inputData.length; i++) {
+            jsFunction += "run(inputData[" + i + "], outputData[" + i + "]);\n";
+        }
+        System.out.println(jsFunction);
     }
 }
