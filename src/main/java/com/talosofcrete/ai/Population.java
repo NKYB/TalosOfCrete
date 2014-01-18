@@ -31,8 +31,8 @@ public class Population {
 
     
     private void initPopulation(){
-        programs = new Program[config.population_max_size_limit+2];
-        for (int i = 0; i < config.population_max_size_limit+2; i++) {
+        programs = new Program[config.population_max_size_limit];
+        for (int i = 0; i < config.population_max_size_limit; i++) {
             programs[i] = new Program(config, data);
         }
     }
@@ -52,6 +52,9 @@ public class Population {
     }
     
     private void evolve(int programIndex){
+        if (programIndex>=config.population_max_size_limit){
+            programIndex=config.population_max_size_limit-1;
+        }
         Program swap = Program.shallowCopy(programs[programIndex], config, data);
         swap.modify(programs);
         swap.eval();

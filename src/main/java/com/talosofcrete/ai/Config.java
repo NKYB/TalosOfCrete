@@ -21,7 +21,7 @@ public class Config {
     public int word_constant_max = 100;
     
     public Config randomize(){
-        population_max_size = Utils.getRndInt(5, population_max_size_limit);
+        population_max_size = Utils.getRndInt(5, population_max_size_limit-1);
         program_max_words_length = Utils.getRndInt(5, 100);
         program_action_add_start = 0;
         program_action_add_end = Utils.getRndInt(5, 100);
