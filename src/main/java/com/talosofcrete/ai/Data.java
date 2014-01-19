@@ -41,7 +41,9 @@ public class Data {
     public void importCSVData(){
         
         try{
-            BufferedReader dataBR = new BufferedReader(new FileReader(new File("C:\\Users\\Administrator\\Documents\\GitHub\\TalosOfCrete\\data\\weather_data.csv")));
+//            BufferedReader dataBR = new BufferedReader(new FileReader(new File("C:\\Users\\Administrator\\Documents\\GitHub\\TalosOfCrete\\data\\weather_data.csv")));
+//            BufferedReader dataBR = new BufferedReader(new FileReader(new File("C:\\Users\\Administrator\\Documents\\GitHub\\TalosOfCrete\\data\\yahoo2.csv")));
+            BufferedReader dataBR = new BufferedReader(new FileReader(new File("C:\\Users\\Administrator\\Documents\\GitHub\\TalosOfCrete\\data\\compfirm.csv")));
             String line = "";
 
             ArrayList<String> dataArr = new ArrayList<String>(); 

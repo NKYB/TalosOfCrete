@@ -22,6 +22,8 @@ public class Config {
     
     public Config randomize(){
         population_max_size = Utils.getRndInt(5, population_max_size_limit-1);
+        if (population_max_size > 99)
+            population_max_size = 99;
         program_max_words_length = Utils.getRndInt(5, 100);
         program_action_add_start = 0;
         program_action_add_end = Utils.getRndInt(5, 100);
