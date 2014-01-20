@@ -20,6 +20,9 @@ public class Config {
     public int word_constant_min = 1;
     public int word_constant_max = 100;
     
+    public int aparapi_new_kernels = 1440;
+    public int aparapi_num_generations_to_run = 1000000;
+    
     public Config randomize(){
         population_max_size = Utils.getRndInt(5, population_max_size_limit-1);
         if (population_max_size > 99)
@@ -38,4 +41,11 @@ public class Config {
         return this;
     }
     
+    public static int[] getSeeds(int num_seeds) {
+        int[] seeds = new int[num_seeds];
+        for (int i = 0; i < num_seeds; i++) {
+            seeds[i] = (int)((java.lang.Math.random()*89999999) + 10000000);
+        }
+        return seeds;
+    }
 }

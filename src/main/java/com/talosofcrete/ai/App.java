@@ -12,5 +12,8 @@ public class App {
         data.createRandom(10, 5);
         
         Population population = new Population(config, data);
+        
+        Aparapi aparapi = new Aparapi(config, data);
+        aparapi.evolve(population.programs[0]);
     }
 }
