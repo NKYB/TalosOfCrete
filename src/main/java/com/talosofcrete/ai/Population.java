@@ -131,8 +131,7 @@ public class Population {
                 jsFunction += "     score *= " + wordList[j].param + ";\n";
             } 
         }
-        jsFunction += "     console.log('score found:',score);\n";
-        jsFunction += "     console.log('score target:',outputData);\n";
+        jsFunction += "     console.log('score found:',score,' target:',outputData);\n";
         jsFunction += "}\n";
         for (int i = 0; i < data.inputData.length; i++) {
             jsFunction += "run(inputData[" + i + "], outputData[" + i + "]);\n";
