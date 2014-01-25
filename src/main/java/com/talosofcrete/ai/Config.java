@@ -29,6 +29,12 @@ public class Config {
     public int aparapi_new_kernels = 1440;
     public int aparapi_num_generations_to_run = 1000000;
     
+    /**
+     * Randomizes the configuration, used when the genetic algorythm slows the 
+     * rate of evolution
+     * 
+     * @return this
+     */
     public Config randomize(){
         population_max_size = Utils.getRndInt(5, population_max_size_limit-1);
         if (population_max_size > 99)
