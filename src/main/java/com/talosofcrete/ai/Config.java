@@ -30,10 +30,10 @@ public class Config {
     public int aparapi_num_generations_to_run = 1000000;
     
     /**
-     * Randomizes the configuration, used when the genetic algorythm slows the 
+     * Randomizes the configuration, used when the genetic algorithm slows the 
      * rate of evolution
      * 
-     * @return this
+     * @return randomized config
      */
     public Config randomize(){
         population_max_size = Utils.getRndInt(5, population_max_size_limit-1);
@@ -53,6 +53,14 @@ public class Config {
         return this;
     }
     
+    /**
+     * Creates an array of seeds for a random number generator, OpenCL does not
+     * have a random number generator
+     * 
+     * @param num_seeds the number of seeds to create should be higher than the 
+     * maximum number of kernels on the GPU
+     * @return array of seeds
+     */
     public static int[] getSeeds(int num_seeds) {
         int[] seeds = new int[num_seeds];
         for (int i = 0; i < num_seeds; i++) {
