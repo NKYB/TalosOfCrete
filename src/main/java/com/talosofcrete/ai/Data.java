@@ -7,6 +7,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Create data sequenced correctly from both external sources and generated
+ * for testing
+ * 
+ * @author nkyb
+ */
 public class Data {
     public float[][] inputData;
     
