@@ -18,6 +18,13 @@ public class Data {
     
     public float[] outputData;
     
+    /**
+     * Creates a random input array and uses those values to create the output
+     * value. Used for testing, should always result in a solution.
+     * 
+     * @param numRows
+     * @param numCols 
+     */
     public void createRandom(int numRows, int numCols){
         inputData = new float[numRows][numCols];
         outputData = new float[numRows];
