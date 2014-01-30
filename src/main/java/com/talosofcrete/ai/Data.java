@@ -38,6 +38,13 @@ public class Data {
         }
     }
     
+    /**
+     * Creates a sequential input array and uses those values to create the 
+     * output value. Used for testing, should always result in a solution.
+     * 
+     * @param numRows
+     * @param numCols 
+     */
     public void createSequential(int numRows, int numCols){
         inputData = new float[numRows][numCols];
         outputData = new float[numRows];
