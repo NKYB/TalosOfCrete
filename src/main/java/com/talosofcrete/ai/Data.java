@@ -58,6 +58,11 @@ public class Data {
         }
     }
     
+    /**
+     * Import from a CSV file
+     * 
+     * TODO: change the path from hard coded!
+     */
     public void importCSVData(){
         
         try{
