@@ -1,5 +1,11 @@
 package com.talosofcrete.ai;
 
+/**
+ * Population evolves over generations to define new programs, check their 
+ * ability to survive and to evolve
+ * 
+ * @author nkyb
+ */
 public class Population {
 
     public Program[] programs;
