@@ -14,6 +14,12 @@ public class Population {
     private Data data;
     public float topScore;
     
+    /**
+     * Main loop to work through all the generations
+     * 
+     * @param config
+     * @param data 
+     */
     public Population(Config config, Data data){
         this.config = config;
         topScore = config.program_initial_score;
