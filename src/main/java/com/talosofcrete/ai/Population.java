@@ -41,7 +41,9 @@ public class Population {
         debug_final_score();
     }
 
-    
+    /*
+     * Initializes a new population to the config size limit
+     */
     private void initPopulation(){
         programs = new Program[config.population_max_size_limit];
         for (int i = 0; i < config.population_max_size_limit; i++) {
