@@ -51,6 +51,9 @@ public class Population {
         }
     }
     
+    /*
+     * sort the populations programs by score, lowest to highest
+     */
     private void sort(){
         // bubbleSortPrograms
         Program swapProgram;
