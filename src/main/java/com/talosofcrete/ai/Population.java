@@ -68,6 +68,10 @@ public class Population {
         }
     }
     
+    /*
+     * Evolves each program looking for improvements, top 2 programs are 
+     * preserved
+     */
     private void evolve(int programIndex){
         if (programIndex>=config.population_max_size_limit){
             programIndex=config.population_max_size_limit-1;
