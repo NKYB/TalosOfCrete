@@ -95,6 +95,11 @@ public class Population {
         programs[config.population_max_size-1].words = "";
     }
     
+    /*
+     * if no better score has been found in 50000 generations, randomize the 
+     * config for the evolutionary values to encourage discovery of better
+     * programs
+     */
     public void modifyConfig(int generation){
         if (generation > 0 && generation % 50000 == 0){
             if (topScore <= programs[0].score){
