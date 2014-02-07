@@ -88,6 +88,9 @@ public class Population {
         }
     }
     
+    /*
+     * remove the worst preforming program and set it's program to empty
+     */
     private void prune(){
         programs[config.population_max_size-1].words = "";
     }
