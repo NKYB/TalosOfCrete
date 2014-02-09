@@ -109,6 +109,10 @@ public class Population {
         }
     }
     
+    /**
+     * output the top score every 50000 generations
+     * @param loopIndex 
+     */
     private void debug_loop(int loopIndex){
         if (loopIndex%50000==0){
             System.out.println(loopIndex + " Current Top Score: " + programs[0].score);
