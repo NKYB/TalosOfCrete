@@ -119,6 +119,9 @@ public class Population {
         }
     }
     
+    /**
+     * output the top score and program
+     */
     private void debug_final_score(){
         for (int j = 0; j < config.population_max_size; j++) {
             System.out.println(j + " - Word: " + programs[j].words  + " Score: " + programs[j].score);
