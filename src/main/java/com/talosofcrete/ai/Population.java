@@ -129,6 +129,9 @@ public class Population {
         renderAsJS();
     }
     
+    /**
+     * for top performing program output as JavaScript function
+     */
     public void renderAsJS(){
         String inputData = "var inputData = [";
         String outputData = "var outputData = [";
