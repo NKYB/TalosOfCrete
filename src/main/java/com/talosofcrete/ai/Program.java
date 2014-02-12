@@ -1,5 +1,12 @@
 package com.talosofcrete.ai;
 
+/**
+ * Each unit in the generation has a program that is tested for fitness, better
+ * programs survive to evolve to the end program that represents a model for the
+ * data
+ * 
+ * @author Administrator
+ */
 public class Program {
     private Config config;
     public Data data;
