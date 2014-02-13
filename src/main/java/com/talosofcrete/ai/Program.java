@@ -18,7 +18,11 @@ public class Program {
         this.data = data;
         score = config.program_initial_score;
     }
-    
+    /**
+     * apply evolution to each program, adding, modify, delete, crossing
+     * 
+     * @param programs 
+     */
     public void modify(Program[] programs){
         if (words.length() > 0){
             int action_index = (int)(java.lang.Math.random() * (config.program_action_cross_end+1));
