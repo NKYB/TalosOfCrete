@@ -58,6 +58,9 @@ public class Program {
         }
     }
     
+    /*
+     * add the new word to the word list
+     */
     public void modifyByAdding(String[] wordList, String newWord){
         if (wordList.length < config.program_max_words_length){
             words += newWord; 
