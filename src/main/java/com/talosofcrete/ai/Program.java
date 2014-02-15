@@ -67,6 +67,9 @@ public class Program {
         }
     }
     
+    /*
+     * change an existing word to a new word
+     */
     public void modifyByChanging(int modifyIndex, String[] wordList, String newWord){
         if (indexExists(wordList, modifyIndex)){
             wordList[modifyIndex] = newWord;
