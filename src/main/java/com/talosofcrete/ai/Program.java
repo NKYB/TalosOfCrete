@@ -95,6 +95,9 @@ public class Program {
         }
     }
     
+    /*
+     * Modify program by selecting words from top scoring program
+     */
     public void modifyByCrossing(Program programToCrossFrom){
         String[] wordList = createWordListFromWords(words);
         String[] crossWordList = createWordListFromWords(programToCrossFrom.words);
