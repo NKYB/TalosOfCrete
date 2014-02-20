@@ -80,6 +80,9 @@ public class Program {
         }
     }
     
+    /*
+     * change the program by removing a word
+     */
     public void modifyByDeleting(int deleteIndex, String[] wordList){
         if (indexExists(wordList, deleteIndex)){
             wordList[deleteIndex] = "";
