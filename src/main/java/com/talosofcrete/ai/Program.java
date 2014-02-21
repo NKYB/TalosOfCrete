@@ -113,6 +113,11 @@ public class Program {
         }
     }
     
+    /*
+     * Create array of words from portable format
+     * 
+     * @words word list in portable format
+     */
     public String[] createWordListFromWords(String words){
         return words.split(";");
     }
