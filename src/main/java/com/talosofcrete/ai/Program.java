@@ -137,6 +137,12 @@ public class Program {
         }
     }
     
+    /*
+     * get the score for a list of words running against a single row of input
+     * data
+     * @wordsList program array of words
+     * @inputDataRow a single row of input data
+     */
     public float scoreWord(Word[] wordsList, float[] inputDataRow){
         float wordScore = 0;
         for (int j = 0; j < wordsList.length; j++) {
