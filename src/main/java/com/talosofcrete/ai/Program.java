@@ -151,6 +151,11 @@ public class Program {
         return wordScore;
     }
     
+    /*
+     * Removes the helper strings from the word list
+     * 
+     * @wordsAsString list of words in program
+     */
     public static Word[] createCleanWordsFromWords(String wordsAsString){
         String cleanWords = Utils.replace(wordsAsString,"VAR_","");
         String[] word = cleanWords.split(";");
