@@ -169,6 +169,13 @@ public class Program {
         return wordsList;
     }
     
+    /*
+     * creates a memoryt seperate copy of a program
+     * 
+     * @programFrom input program to copy
+     * @config current config
+     * @data current data
+     */
     public static Program shallowCopy(Program programFrom, Config config, Data data){
         Program swap = new Program(config, data);
         swap.words = programFrom.words;
