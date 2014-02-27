@@ -1,5 +1,8 @@
 package com.talosofcrete.ai;
 
+/*
+ * Helpers to get things done
+ */
 public class Utils {
     public static int getRndInt(int min, int max){
         return ((int)(java.lang.Math.random()*(max+1))) + min;
