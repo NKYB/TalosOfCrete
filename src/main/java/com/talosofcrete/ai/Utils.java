@@ -1,13 +1,13 @@
 package com.talosofcrete.ai;
 
-/*
- * Helpers to get things done
+/**
+ * Utility class for loss ends 
  * 
  * @author NKYB
  */
 public class Utils {
     
-    /*
+    /**
      * Generate a random int between to int's inclusive
      * 
      * @min the minimun random value
@@ -18,7 +18,7 @@ public class Utils {
         return ((int)(java.lang.Math.random()*(max+1))) + min;
     }
         
-    /*
+    /**
      * Replace all occurance of needle with the new string in the source
      * 
      * @source the string to search for the needle string
