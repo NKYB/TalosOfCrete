@@ -21,7 +21,7 @@ public class Utils {
      * 
      * @source the string to search for the needle string
      * @os the original string to search for
-     * @ns the new string to replace with
+     * @ns the new <CODE>string</CODE> to replace with
      * @return the new source
      */
     public static String replace (String source, String os, String ns) {
