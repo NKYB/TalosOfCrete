@@ -7,11 +7,23 @@ public class Utils {
     
     /*
      * Generate a random int between to int's inclusive
+     * 
+     * @min the minimun random value
+     * @max the maximum random value
+     * @return the random number
      */
     public static int getRndInt(int min, int max){
         return ((int)(java.lang.Math.random()*(max+1))) + min;
     }
         
+    /*
+     * Replace all occurance of needle with the new string in the source
+     * 
+     * @source the string to search for the needle string
+     * @os the original string to search for
+     * @ns the new string to replace with
+     * @return the new source
+     */
     public static String replace (String source, String os, String ns) {
         if (source == null) {
             return null;
