@@ -1,6 +1,14 @@
+target/classes/
+target/javadoc-bundle-options/
+target/maven-archiver/
+target/surefire/
+target/surefire-reports/
+target/test-classes/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
 *.class
-
-# Package Files #
 *.jar
 *.war
 *.ear
