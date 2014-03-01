@@ -2,6 +2,8 @@ package com.talosofcrete.ai;
 
 /*
  * Helpers to get things done
+ * 
+ * @author NKYB
  */
 public class Utils {
     

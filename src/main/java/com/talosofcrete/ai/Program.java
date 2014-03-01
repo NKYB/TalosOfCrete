@@ -5,7 +5,7 @@ package com.talosofcrete.ai;
  * programs survive to evolve to the end program that represents a model for the
  * data
  * 
- * @author Administrator
+ * @author NKYB
  */
 public class Program {
     private Config config;
