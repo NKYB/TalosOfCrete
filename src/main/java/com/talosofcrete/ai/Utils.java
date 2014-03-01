@@ -4,6 +4,10 @@ package com.talosofcrete.ai;
  * Helpers to get things done
  */
 public class Utils {
+    
+    /*
+     * Generate a random int between to int's inclusive
+     */
     public static int getRndInt(int min, int max){
         return ((int)(java.lang.Math.random()*(max+1))) + min;
     }
