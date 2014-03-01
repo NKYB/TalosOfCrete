@@ -8,10 +8,10 @@ package com.talosofcrete.ai;
 public class Utils {
     
     /**
-     * Generate a random int between to int's inclusive
+     * Generate a random int between the min and max, inclusive
      * 
-     * @min the minimun random value
-     * @max the maximum random value
+     * @param min the minimun random value
+     * @param max the maximum random value
      * @return the random number
      */
     public static int getRndInt(int min, int max){
@@ -21,10 +21,10 @@ public class Utils {
     /**
      * Replace all occurance of needle with the new string in the source
      * 
-     * @source the string to search for the needle string
-     * @os the original string to search for
-     * @ns the new <CODE>string</CODE> to replace with
-     * @return the new source
+     * @param source the string to search for the needle string
+     * @param os the original <CODE>string</CODE> to search for
+     * @param ns the new <CODE>string</CODE> to replace with
+     * @return the new source with needle removed
      */
     public static String replace (String source, String os, String ns) {
         if (source == null) {

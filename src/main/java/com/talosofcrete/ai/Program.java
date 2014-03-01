@@ -58,7 +58,7 @@ public class Program {
         }
     }
     
-    /*
+    /**
      * add the new word to the word list
      */
     public void modifyByAdding(String[] wordList, String newWord){
@@ -67,7 +67,7 @@ public class Program {
         }
     }
     
-    /*
+    /**
      * change an existing word to a new word
      */
     public void modifyByChanging(int modifyIndex, String[] wordList, String newWord){
@@ -80,7 +80,7 @@ public class Program {
         }
     }
     
-    /*
+    /**
      * change the program by removing a word
      */
     public void modifyByDeleting(int deleteIndex, String[] wordList){
@@ -95,7 +95,7 @@ public class Program {
         }
     }
     
-    /*
+    /**
      * Modify program by selecting words from top scoring program
      */
     public void modifyByCrossing(Program programToCrossFrom){
@@ -113,7 +113,7 @@ public class Program {
         }
     }
     
-    /*
+    /**
      * Create array of words from portable format
      * 
      * @words word list in portable format
@@ -137,7 +137,7 @@ public class Program {
         }
     }
     
-    /*
+    /**
      * get the score for a list of words running against a single row of input
      * data
      * @wordsList program array of words
@@ -151,7 +151,7 @@ public class Program {
         return wordScore;
     }
     
-    /*
+    /**
      * Removes the helper strings from the word list
      * 
      * @wordsAsString list of words in program
@@ -169,7 +169,7 @@ public class Program {
         return wordsList;
     }
     
-    /*
+    /**
      * creates a memoryt seperate copy of a program
      * 
      * @programFrom input program to copy
