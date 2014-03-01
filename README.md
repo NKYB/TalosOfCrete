@@ -6,4 +6,5 @@ TalosOfCrete
 
 Another tiered genetic algorithm written in Java
 
-
+##Javadoc##
+http://nkyb.github.io/TalosOfCrete/
