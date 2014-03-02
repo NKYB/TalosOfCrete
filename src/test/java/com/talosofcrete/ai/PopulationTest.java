@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 
 /**
  *
- * @author nbuwald
+ * @author nkyb
  */
 public class PopulationTest extends TestCase {
     

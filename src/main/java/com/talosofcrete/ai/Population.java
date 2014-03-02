@@ -52,10 +52,10 @@ public class Population {
     }
     
     /*
-     * sort the populations programs by score, lowest to highest
+     * sort the populations programs by score, lowest to highest using the
+     * bubble sort method
      */
     private void sort(){
-        // bubbleSortPrograms
         Program swapProgram;
         for (int a = 0; a < config.population_max_size - 1; a++) {
             for (int b = 0; b < config.population_max_size - a - 1; b++) {
