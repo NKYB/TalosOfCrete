@@ -16,7 +16,6 @@ public class Population {
     
     /**
      * Main loop to work through all the generations
-     * 
      * @param config dynamic creation to continue evolution when progress stalls
      * @param data straining data with inputs and results
      */
