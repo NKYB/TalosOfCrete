@@ -44,6 +44,13 @@ public class Word {
         return word;
     }
     
+    /**
+     * gets the user friendly version of the math word
+     * 
+     * @param action math to apply
+     * @param numOfVars index to apply
+     * @return user friendly string
+     */
     private static String getMathWord(String action, int numOfVars){
         int varIndex = Utils.getRndInt(0, numOfVars-1);
         return action + ":VAR_" + varIndex + ";";
