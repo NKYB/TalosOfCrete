@@ -56,6 +56,14 @@ public class Word {
         return action + ":VAR_" + varIndex + ";";
     }
     
+    /**
+     * get a constant for the program
+     * 
+     * @param action math to apply
+     * @param minValue min constant value
+     * @param maxValue max constant value
+     * @return 
+     */
     private static String getMathWordConstant(String action, int minValue, int maxValue){
         int constantValue = Utils.getRndInt(minValue, maxValue);
         return action + ":" + constantValue + ";";
