@@ -69,6 +69,14 @@ public class Word {
         return action + ":" + constantValue + ";";
     }
 
+    /**
+     * Calculate value of word against data
+     * 
+     * @param word to evaluate
+     * @param vars data set to test against
+     * @param currentScore the current score to add to
+     * @return the new value of current score
+     */
     public static float eval(Word word, float[] vars, float currentScore){
         if (word.action.equals("ADD")){
             return currentScore + vars[word.param];
