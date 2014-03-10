@@ -4,6 +4,13 @@ public class Word {
     public String action = "";
     public int param = 0;
     
+    /**
+     * 
+     * @param currentWord
+     * @param numOfVars
+     * @param config
+     * @return 
+     */
     public static String createRandom(String currentWord, int numOfVars, Config config){
         int actionIndex = Utils.getRndInt(0,7);
         return create(currentWord, actionIndex, numOfVars, config);
