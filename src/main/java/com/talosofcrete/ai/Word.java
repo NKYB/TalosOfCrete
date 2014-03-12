@@ -16,6 +16,15 @@ public class Word {
         return create(currentWord, actionIndex, numOfVars, config);
     }
     
+    /**
+     * return new word
+     * 
+     * @param currentWord
+     * @param actionIndex
+     * @param numOfVars
+     * @param config
+     * @return 
+     */
     public static String create(String currentWord, int actionIndex, int numOfVars, Config config){
         String word = "";
         switch(actionIndex){
