@@ -1,10 +1,11 @@
-package com.talosofcrete.ai;
-
 /**
  * Utility class for loss ends 
  * 
  * @author NKYB
  */
+
+package com.talosofcrete.ai;
+
 public class Utils {
     
     /**
