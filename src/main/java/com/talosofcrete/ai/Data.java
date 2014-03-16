@@ -1,3 +1,9 @@
+/**
+ * Create data sequenced correctly from both external sources and generated
+ * for testing
+ * 
+ * @author nkyb
+ */
 package com.talosofcrete.ai;
 
 import java.io.BufferedReader;
@@ -7,12 +13,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Create data sequenced correctly from both external sources and generated
- * for testing
- * 
- * @author nkyb
- */
 public class Data {
     public float[][] inputData;
     
