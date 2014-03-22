@@ -4,7 +4,6 @@
  * 
  * @author nkyb
  */
-
 package com.talosofcrete.ai;
 
 import java.io.BufferedReader;
