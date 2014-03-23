@@ -1,11 +1,11 @@
-package com.talosofcrete.ai;
-
 /**
  * Define all the configuration parameters for the performance of the genetic
  * algorithm
  * 
  * @author nkyb
  */
+package com.talosofcrete.ai;
+
 public class Config {
     public int population_max_generations = 10000;
     public int program_initial_score = 100000000;
