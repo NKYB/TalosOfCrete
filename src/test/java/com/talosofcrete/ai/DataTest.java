@@ -1,3 +1,6 @@
+/**
+ * Test for data creation
+ */
 package com.talosofcrete.ai;
 
 import junit.framework.TestCase;
