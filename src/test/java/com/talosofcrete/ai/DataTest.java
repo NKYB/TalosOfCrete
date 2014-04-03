@@ -15,6 +15,9 @@ public class DataTest extends TestCase {
         super(testName);
     }
 
+    /**
+     * Create a random set of values
+     */
     public void testCreateRandom() {
         System.out.println("createRandom");
         int numRows = 5;
