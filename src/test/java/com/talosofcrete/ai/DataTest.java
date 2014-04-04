@@ -17,6 +17,7 @@ public class DataTest extends TestCase {
 
     /**
      * Create a random set of values
+     * 
      */
     public void testCreateRandom() {
         System.out.println("createRandom");
