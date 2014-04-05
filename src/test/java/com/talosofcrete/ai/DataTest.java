@@ -29,6 +29,9 @@ public class DataTest extends TestCase {
         TestCase.assertEquals(data.outputData.length, numRows);
     }
 
+    /**
+     * Create a sequential set of values
+     */
     public void testCreateSequential() {
         System.out.println("createSequential");
         int numRows = 5;
