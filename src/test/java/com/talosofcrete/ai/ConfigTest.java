@@ -6,16 +6,15 @@ package com.talosofcrete.ai;
 
 import junit.framework.TestCase;
 
-/**
- *
- * @author nbuwald
- */
 public class ConfigTest extends TestCase {
     
     public ConfigTest(String testName) {
         super(testName);
     }
 
+    /**
+     * test to build out a new config
+     */
     public void testRandomize() {
         System.out.println("randomize");
         Config instance = new Config();
