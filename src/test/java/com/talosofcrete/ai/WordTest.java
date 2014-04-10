@@ -19,6 +19,10 @@ public class WordTest extends TestCase {
         super(testName);
     }
     
+    /**
+     * 
+     * @throws Exception 
+     */
     @Override
     protected void setUp() throws Exception {
         super.setUp();
