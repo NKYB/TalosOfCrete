@@ -35,6 +35,9 @@ public class WordTest extends TestCase {
         data.createSequential(5, 5);
     }
 
+    /**
+     * test the creation of random words
+     */
     public void testCreateRandom() {
         System.out.println("createRandom");
         int numOfVars = data.inputData[0].length;
