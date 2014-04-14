@@ -5,10 +5,6 @@ package com.talosofcrete.ai;
 
 import junit.framework.TestCase;
 
-/**
- *
- * @author nbuwald
- */
 public class DataTest extends TestCase {
     
     public DataTest(String testName) {
