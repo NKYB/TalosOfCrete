@@ -40,6 +40,9 @@ public class ProgramTest extends TestCase {
         assertEquals(8.0F, program.score);
     }
     
+    /**
+     * test all combinations of words
+     */
     public void testScoreWord(){
         System.out.println("scoreWord");
         
