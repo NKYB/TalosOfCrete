@@ -16,6 +16,9 @@ public class ProgramTest extends TestCase {
         super(testName);
     }
     
+    /**
+     * test the evaluation function
+     */
     public void testEval() {
         System.out.println("eval");
         
