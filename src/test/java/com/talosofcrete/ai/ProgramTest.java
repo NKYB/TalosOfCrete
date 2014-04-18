@@ -78,6 +78,9 @@ public class ProgramTest extends TestCase {
         assertEquals(-3.5F, program.scoreWord(Program.createCleanWordsFromWords("ADD:VAR_4;DIVIDE:VAR_4;DIVIDE:VAR_2;SUBTRACT:VAR_4;"), data.inputData[0]));
     }
 
+    /**
+     * test the copy of one population to another
+     */
     public void testShallowCopy() {
         System.out.println("shallowCopy");
         
