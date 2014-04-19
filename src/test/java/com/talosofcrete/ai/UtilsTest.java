@@ -8,6 +8,10 @@ import junit.framework.TestCase;
 
 public class UtilsTest extends TestCase {
     
+    /**
+     * 
+     * @param testName 
+     */
     public UtilsTest(String testName) {
         super(testName);
     }
