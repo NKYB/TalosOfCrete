@@ -26,6 +26,9 @@ public class UtilsTest extends TestCase {
         assertEquals("", Utils.replace("", "e", "q"));
     }
 
+    /**
+     * test rnd number generator helper
+     */
     public void testGetRndInt() {
         System.out.println("GetRndInt");
         int min = 0;
