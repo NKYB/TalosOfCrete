@@ -16,6 +16,9 @@ public class UtilsTest extends TestCase {
         super(testName);
     }
     
+    /*
+     * test the simple replace utility
+     */
     public void testReplace() {
         System.out.println("replace");
         
