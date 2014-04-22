@@ -48,6 +48,9 @@ public class WordTest extends TestCase {
         }
     }
     
+    /*
+     * create new population item
+     */
     public void testCreate() {
         System.out.println("create");
         int actionIndex = 0;
