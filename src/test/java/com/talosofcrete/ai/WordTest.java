@@ -59,6 +59,9 @@ public class WordTest extends TestCase {
         assertNotSame(result, "");
     }
     
+    /**
+     * init a new word
+     */
     public void testInit(){
         Word word = new Word();
     }
