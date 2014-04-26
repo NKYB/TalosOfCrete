@@ -98,16 +98,10 @@ public class ProgramTest extends TestCase {
         assertEquals(programFrom.words, programTo.words);
         assertEquals(programFrom.score, programTo.score);
     }
-    
-    public void testModify() {
-//        System.out.println("modify");
-//        Program[] programs = null;
-//        Program instance = null;
-//        instance.modify(programs);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-    }
 
+    /**
+     * test a program by adding a word
+     */
     public void testModifyByAdding() {
         System.out.println("modifyByAdding");
         
