@@ -66,6 +66,9 @@ public class WordTest extends TestCase {
         Word word = new Word();
     }
 
+    /**
+     * test the eval of a word
+     */
     public void testEval() {
         System.out.println("eval");
         float[] vars = data.inputData[0];
