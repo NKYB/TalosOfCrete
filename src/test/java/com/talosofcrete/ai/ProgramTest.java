@@ -125,7 +125,7 @@ public class ProgramTest extends TestCase {
         assertEquals(program.words,"CHANGE_TO;");
     }
 
-        /**
+    /**
      * test a program by modifying a word
      */
     public void testModifyByChanging() {
