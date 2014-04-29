@@ -165,7 +165,9 @@ public class ProgramTest extends TestCase {
         program.modifyByChanging(-1, wordList, "CHANGE_TO");
         assertEquals(program.words,"ADD:VAR_4;DIVIDE:VAR_4;DIVIDE:VAR_2;SUBTRACT:VAR_4;");
     }
-
+/**
+ * test modifying a word by deleting from it
+ */
     public void testModifyByDeleting() {
         Config config = new Config();
         config.population_max_generations = 1000;
