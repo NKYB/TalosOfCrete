@@ -45,6 +45,9 @@ public class PopulationTest extends TestCase {
         assertTrue( true );
     }
     
+    /**
+     * test the output to JavaScript
+     */
     public void testRenderAsJS(){
         Config config = new Config();
         config.population_max_generations = 1000;
