@@ -27,6 +27,9 @@ public class PopulationTest extends TestCase {
         assertTrue( true );
     }
     
+    /**
+     * test modifying the config
+     */
     public void testModifyConfig(){
         Config config = new Config();
         config.population_max_generations = 1000;
