@@ -12,6 +12,9 @@ public class PopulationTest extends TestCase {
         super(testName);
     }
 
+    /**
+     * setup a population
+     */
     public void testSomeMethod() {
         Config config = new Config();
         config.population_max_generations = 1000;
