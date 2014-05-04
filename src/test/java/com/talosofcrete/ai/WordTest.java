@@ -15,6 +15,10 @@ public class WordTest extends TestCase {
     private Config config;
     private Data data;
     
+    /**
+     * setup word test
+     * @param testName 
+     */
     public WordTest(String testName) {
         super(testName);
     }
