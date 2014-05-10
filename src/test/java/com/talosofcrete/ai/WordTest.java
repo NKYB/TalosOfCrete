@@ -6,10 +6,6 @@ package com.talosofcrete.ai;
 
 import junit.framework.TestCase;
 
-/**
- *
- * @author nbuwald
- */
 public class WordTest extends TestCase {
     
     private Config config;
