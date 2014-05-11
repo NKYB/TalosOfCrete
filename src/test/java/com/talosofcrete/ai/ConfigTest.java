@@ -10,6 +10,7 @@ public class ConfigTest extends TestCase {
     
     /**
      * setup config test
+     * 
      * @param testName 
      */
     public ConfigTest(String testName) {
