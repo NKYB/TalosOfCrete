@@ -9,6 +9,7 @@ import junit.framework.TestCase;
 public class ProgramTest extends TestCase {
     
     /**
+     * setup the class
      * 
      * @param testName 
      */
