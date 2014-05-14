@@ -20,6 +20,7 @@ public class WordTest extends TestCase {
     }
     
     /**
+     * setup some sequential data for testing
      * 
      * @throws Exception 
      */
