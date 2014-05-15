@@ -7,6 +7,11 @@ import junit.framework.TestCase;
 
 public class DataTest extends TestCase {
     
+    /**
+     * Setup data test
+     * 
+     * @param testName 
+     */
     public DataTest(String testName) {
         super(testName);
     }
