@@ -3,7 +3,6 @@ package com.talosofcrete.ai;
 import junit.framework.TestCase;
 
 /**
- *
  * @author nkyb
  */
 public class PopulationTest extends TestCase {
