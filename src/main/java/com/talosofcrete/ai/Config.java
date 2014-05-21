@@ -59,6 +59,7 @@ public class Config {
      * 
      * @param num_seeds the number of seeds to create should be higher than the 
      * maximum number of kernels on the GPU
+     * 
      * @return array of seeds
      */
     public static int[] getSeeds(int num_seeds) {
