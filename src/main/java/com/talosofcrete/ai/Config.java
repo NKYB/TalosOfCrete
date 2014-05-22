@@ -33,6 +33,7 @@ public class Config {
      * Randomizes the configuration, used when the genetic algorithm slows the 
      * rate of evolution
      * 
+     * 
      * @return randomized config
      */
     public Config randomize(){
