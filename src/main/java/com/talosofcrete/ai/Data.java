@@ -54,7 +54,7 @@ public class Data {
                     inputData[i][j] = (i*numRows)+j;
                 }
             }
-            outputData[i] = inputData[i][2] * inputData[i][1] + inputData[i][0] / 3;
+            outputData[i] = inputData[i][2] * inputData[i][1] + inputData[i][0];
         }
     }
     
