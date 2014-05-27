@@ -10,6 +10,7 @@ public class ProgramTest extends TestCase {
     
     /**
      * setup the class
+     * 
      * @param testName 
      */
     public ProgramTest(String testName) {
